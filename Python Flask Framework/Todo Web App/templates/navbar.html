@@ -7,9 +7,9 @@
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
             <div class="navbar-nav mx-auto mb-2 mb-lg-0">
-                <a class="nav-link" href="">About</a>
-                <a class="nav-link" href="">FAQ</a>
-                <a class="nav-link" href="">Contact Us</a>
+                <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
+                <a class="nav-link" href="{{ url_for('contact') }}">Contact Us</a>
             </div>
             <div class="dropdown text-end">
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

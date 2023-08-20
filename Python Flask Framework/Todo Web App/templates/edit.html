@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h1 class="text-center mb-4">Edit Todo</h1>
+<form action="/edit/{{ todo.id }}" method="post">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" value="{{ todo.title }}" name="title">
+        <button class="btn btn-outline-secondary" type="submit">Save</button>
+    </div>
+</form>
+
+{% endblock %}
