@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <title>BeeBin</title>
+</head>
+<body class="container-xl">
+    <h1 class="display-1">BeeBin</h1>
+    <p class="lead">
+        Convenient file sharing in three steps without
+        registration.
+    </p>
+
+    <p class="lead">
+        <strong class="mt-2 pe-2"><span class="rounded-pill bg-secondary btn btn-sm text-light" style="width: 2rem; height:2rem;">1</span></strong>
+        Your new bin is: <a href="{{ url_for('file_bin', bin_id=bin_id) }}">{{ bin_id }}</a>
+    </p>
+    <p class="lead">
+        <strong class="mt-2 pe-2"><span class="rounded-pill bg-secondary btn btn-sm text-light" style="width: 2rem; height:2rem;">2</span></strong>
+        Upload files to this bin.
+    </p>
+    <p class="lead">
+        <strong class="mt-2 pe-2"><span class="rounded-pill bg-secondary btn btn-sm text-light" style="width: 2rem; height:2rem;">3</span></strong>
+        Share the link with anyone you want.
+    </p>
+
+    <p class="pt-2 text-muted">
+        <em>
+            The files can be deleted manually at any time and will in any case be deleted automatically 6 days from now.
+        </em>
+    </p>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

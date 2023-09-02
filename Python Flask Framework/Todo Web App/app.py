@@ -13,11 +13,11 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todos.db'
 app.config['SECRET_KEY'] = 'your secret key'
 app.config['SECURITY_PASSWORD_SALT'] = 'your security password salt'
 
-app.config['MAIL_SERVER'] = 'smtp.domain.com'
+app.config['MAIL_SERVER'] = 'smtp.ipage.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'your_email@domain.com'
-app.config['MAIL_PASSWORD'] = 'your password'
+app.config['MAIL_USERNAME'] = 'justin@teeglad.com.ng'
+app.config['MAIL_PASSWORD'] = 'Ifeanyi104'
 
 db = SQLAlchemy(app)
 mail = Mail(app)
@@ -115,7 +115,6 @@ def verify_email(token):
 
 @app.route('/reset-password/', methods=['GET', 'POST'])
 def reset_password_request():
-    print(f"reset_password: {request.method} {request.url}")
     if request.method == 'POST':
         # validate form data and send password reset email
         email = request.form['email']
@@ -130,7 +129,6 @@ def reset_password_request():
 
 @app.route('/reset-password/<token>', methods=['GET', 'POST'])
 def reset_password(token):
-    print(f"reset_password: {request.method} {request.url}")
     email = verify_token(token)
     if not email:
         # token is invalid or expired
@@ -285,7 +283,7 @@ Message: {message}
     return render_template('contact.html')
 
 
-
+# Create database tables
 with app.app_context():
     db.create_all()
 
